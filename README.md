@@ -4,6 +4,8 @@ Detection Models
 Aplicatie in care vom aplica YoloV2 si SSD(Single Shot-Detector) asupra unui stream video.
 
 *scurta descriere a ceea ce am incercat sa realizez*
+
+
 *pentru a putea da run programului,trebuie mers in yolov2_model.py (unde se fac instantierile necesare si se cheama metoda run())*
 
 yolov2_ssd_methods.py
