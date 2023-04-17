@@ -27,7 +27,7 @@ obiectele ce au fost gasite.
 Ultima metoda,run(),citeste frame-urile din cadrul celor doua obiecte VideoCapture (cap1,cap2)
 Frame-urile primesc un resize,cu ajutorul cv2.resize() (acest resize a fost facut strict din
 considerente de incadrare pe ecran si de a arata oarecum estetic),inainte de a fi trimise celor doua modele
-(YOLO si SSD).Chemand metoda DetectionAlgorithm,din cadrul clasei YoloV2Model,primim inapoi
+(YOLO si SSD).Chemand metoda detection_algorithm,din cadrul clasei YoloV2Model,primim inapoi
 chenarele obiectelor pe care le-a detectat modelul YOLOV2.Parcurgand aceste chenare,desenam 
 pe frame-ul atribuit acestui model dreptunghiuri,incadrand obiectele detectate.
 In final concatenam cele 2 frame-uri cu ajutorul cv2.hconcat(),si frame-ul rezultat il
@@ -48,7 +48,7 @@ In cadrul constructorului,modelul este incarcat cu ajutorul:cv2.dnn.readNetFromD
 care primeste parametrii necesari (model_path,weights_path).Straturile output-ului sunt obtinute
 prin getter-ul necesar,get_output_layers().Aceasta functie extrage layere-le care sunt folosite
 pentru realizarea predictiilor in cadrul modelului YoloV2,generate cu ajutorul metodei self.model.getUnconnectedOutLayers().
-Functia DetectionAlgorithm(),primeste frame-ul necesar si aplica modelul asupra sa.
+Functia detection_algorithm(),primeste frame-ul necesar si aplica modelul asupra sa.
 Ca si mai sus trebuie modificat frame-ul si transformat in format blob.Acest blob optinut este trimis
 ca input modelului,si ulterior este obtinuta o lista de Numpy arrays,pentru fiecare output layer,de mai sus,
 arrays,ce contin "detectarile" facute de model.
